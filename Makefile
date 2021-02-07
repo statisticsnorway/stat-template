@@ -5,21 +5,14 @@ default: | help
 install-runtime-tools: ## Install required tools for running and using tools
 	pip install pytest
 
-
 .PHONY: test
 test: ## Run tests
-	pytest
+	pytest tests/
 
 .PHONY: clear-logs
 clear-logs: ## sletter alle loggfiler etter kjøring
-	rm -rf reports/log/runtime/_current/*
+	rm -rf log/*
     
-.PHONY: save-logs
-save-logs: ## Lagrer logger fra kjøringer i current mappen inn i repo langtids lager
-	export NOW=$(date +%Y-%m-%d-%H%M%S)
-	mv reports/log/runtime/_current/ reports/log/runtime/'{NOW}'
-	mkdir reports/log/runtime/_current
-
 .PHONY: bump-version-patch
 bump-version-patch: ## Bump patch version, e.g. 0.0.1 -> 0.0.2
 	bumpversion patch
