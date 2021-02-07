@@ -1,3 +1,15 @@
+# Data types
+*.parquet
+*.csv
+*.log
+*.tmp
+*.sas7bdat
+*.jpeg
+*.dat
+
+# Notebook ceckpoints
+.ipynb_checkpoints
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
